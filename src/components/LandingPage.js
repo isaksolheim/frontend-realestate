@@ -8,6 +8,7 @@ function LandingPage() {
   return(
     <div>
       <Header />
+      <br />
       <div className="container">
         <div id="slogan">
           <h1>Find your perfect home</h1>
