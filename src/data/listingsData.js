@@ -1,7 +1,7 @@
 var listingsData = [
     {
         id: 1,
-        features: true,
+        featured: true,
         address: '234 grand ave',
         city: 'Ridgewood',
         state: 'NY',

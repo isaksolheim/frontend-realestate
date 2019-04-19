@@ -18,9 +18,11 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Route path="/" exact component={LandingPage} />
+          <Route path="/" exact render={(props) => (
+            <LandingPage {...props} data={listingsData} />
+          )} />
           <Route path="/browse/" exact render={(props) => (
-            <Browse {...props} data={this.state.data} />
+            <Browse {...props} data={listingsData} />
           )}/>
           <Route path="/browse/:id" render={(props) => (
             <SingleView {...props} data={this.state.data} />

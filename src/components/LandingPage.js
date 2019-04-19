@@ -2,26 +2,30 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
+import FeaturedHomes from './FeaturedHomes';
 import './../styles/landingpage.scss';
 
-function LandingPage() {
+function LandingPage(props) {
   return(
     <div>
       <Header />
       <br />
       <div className="container">
         <div id="slogan">
-          <h1>Find your perfect home</h1>
-          <h4>Search houses in all of Norway</h4>
+          <h1>Find your new home</h1>
+          <h4>Search houses USA</h4>
           <div id="searchbar">
             <input type="text" />
             <button>Go</button>
           </div>
         </div>
+        
+        <FeaturedHomes data={props.data} />
+
         <div className="card" id="text">
           <p>
             We're reimagining how you buy, sell and rent.
-            It's now weasier to get into a place you love.
+            It's now easier to get into a place you love.
             So let's do this, together.
           </p>
         </div>

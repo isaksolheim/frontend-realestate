@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import HomeFilter from './HomeFilter';
+import listingsData from './../data/listingsData';
 
 
 class Browse extends React.Component {
@@ -21,10 +22,10 @@ class Browse extends React.Component {
   }
   
   createListingView() {
-    console.log(this.props.data);
     // sortedListings starts with all listings, then checks 
     // all filters and removes ones not matching
-    var sortedListings = this.props.data;
+    const tmp = listingsData;
+    var sortedListings = tmp; 
     // loops through state and find ones not set to default
     for (var key in this.state) {
       if (this.state[key] !== 'All') {
@@ -53,6 +54,7 @@ class Browse extends React.Component {
         ))}
       </div>
     );
+
     return listingView;
   }
 
@@ -60,7 +62,7 @@ class Browse extends React.Component {
     return(
       <div>
         <Header />
-        <h1>Browse</h1>
+        <h1>Browse houses</h1>
           <HomeFilter changeHandler={this.changeHandler} />
           {this.createListingView()}
         <Footer />
