@@ -17,8 +17,8 @@ function FeaturedHomes(props) {
             <div className="house-view">
               <img src={listing.image} alt="house" />
               <div className="featured-label">featured</div>
-              <h3>{listing.homeType}</h3>
-              <p>{listing.address}, {listing.city}, {listing.state}</p>
+              <div className="home-type">{listing.homeType}</div>
+              <div className="address">{listing.address}, {listing.city}, {listing.state}</div>
               <div className="extra-info">
                 Rooms: {listing.rooms}, {listing.floorSpace} Sq Ft
               </div>

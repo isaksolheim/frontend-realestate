@@ -1,10 +1,20 @@
+@import 'extra';
+
+a {
+  text-decoration: none;
+  color: black;
+}
 .house-view {
   position: relative;
   border: 2px solid black;
+  border-radius: 5px;
   margin-top: 20px;
-  cursor: pointer;
 
-  img {
+  .home-type {
+    font-size: 20px;
+  }
+
+  img { 
     width: 350px;
     height: 200px;
   }
@@ -22,6 +32,8 @@
     color: green;
     background-color: yellow;
     width: 95px;
+    border-radius: 5px;
+    text-align: center;
     text-transform: uppercase;
   }
 }
@@ -29,12 +41,17 @@
 .house-view:hover {
   .buy-button {
     display: inline-block;
+    position: absolute;
+    text-align: center;
+    bottom: 5px;
+    right: 20px;
+    background-color: color(color2);
+    border-radius: 5px;
     width: 50px;
-    height: 20px;
-    background-color: lightblue;
+    height: 30px;
   }
 
   .buy-button:hover {
-    background-color: gray;
+    background-color: color(color1);
   }
 }
