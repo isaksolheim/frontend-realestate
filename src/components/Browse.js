@@ -15,6 +15,8 @@ class Browse extends React.Component {
       homeType: 'All',
       city: 'All',
     };
+
+    this.changeHandler = this.changeHandler.bind(this)
   }
 
   changeHandler = (event) => {
@@ -34,12 +36,12 @@ class Browse extends React.Component {
             sortedListings.splice(i,1);
           }
         }
-      }
+      } 
     }
 
     var listingView = (
       <div className="container">
-        {sortedListings.map(listing => (
+        {listingsData.map(listing => (
           <Link to={`/browse/${listing.id}`} key={listing.id}>
             <div className="house-view">
               <img src={listing.image} alt="house" />
