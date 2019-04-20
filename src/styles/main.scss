@@ -5,3 +5,10 @@ body, html {
 body {
   font-family: 'Open Sans';
 }
+
+@import 'extra';
+@import 'browse';
+@import 'footer';
+@import 'header';
+@import 'landingpage';
+@import 'singleview';

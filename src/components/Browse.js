@@ -1,10 +1,8 @@
 import React from 'react';
-import './../styles/browse.scss';
 import { Link } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import HomeFilter from './HomeFilter';
-import listingsData from './../data/listingsData';
 
 
 class Browse extends React.Component {
@@ -45,46 +43,14 @@ class Browse extends React.Component {
       this.setState({ extras: extras });
     }
   }
-  
-  createListingView() {
-    // sortedListings starts with all listings, then checks 
-    // all filters and removes ones not matching
-    const tmp = listingsData;
-    var sortedListings = tmp; 
-    // loops through state and find ones not set to default
-    for (var key in this.state) {
-      if (this.state[key] !== 'All') {
-        for (var i = sortedListings.length - 1; i >= 0; i--) {
-          if (sortedListings[i][key] !== this.state[key]) {
-            sortedListings.splice(i,1);
-          }
-        }
-      } 
-    }
-
-    var listingView = (
-      <div className="container">
-        {listingsData.map(listing => (
-          <Link to={`/browse/${listing.id}`} key={listing.id}>
-            <div className="house-view">
-              <img src={listing.image} alt="house" />
-              <h3>{listing.homeType}</h3>
-              <p>{listing.address}, {listing.city}, {listing.state}</p>
-              <div className="extra-info">
-                Rooms: {listing.rooms}, {listing.floorSpace} Sq Ft
-              </div>
-              <div className="buy-button">Buy</div>
-            </div>
-          </Link>
-        ))}
-      </div>
-    );
-
-    return listingView;
-  }
 
   listingView () {
     var listings = [];
+
+    function includesExtras(stateExtras, extras) {
+      // returns true if extras include all extras in stateExtras
+      return (stateExtras.every(i => extras.includes(i)));
+    }
 
     // find what need to be sorted by:
     for (var i = 0; i < this.props.data.length; i++) {
@@ -92,7 +58,7 @@ class Browse extends React.Component {
         if (this.props.data[i].state === this.state.state || this.state.state === 'All') {
           if (this.state.extras.length !== 0) {
             // checks if all extras in state is included in prop extras
-            if (this.state.extras.every(j => this.props.data[i].extras.includes(j))) {
+            if (includesExtras(this.state.extras, this.props.data[i].extras)) {
               listings.push(this.props.data[i]);
             }
           } else {

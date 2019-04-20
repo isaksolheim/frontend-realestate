@@ -1,6 +1,5 @@
 import React from 'react';
 import listingsData from './../data/listingsData';
-import './../styles/singleview.scss';
 import Header from './Header';
 import Footer from './Footer';
 

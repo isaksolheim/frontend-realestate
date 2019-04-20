@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import FeaturedHomes from './FeaturedHomes';
-import './../styles/landingpage.scss';
 
 function LandingPage(props) {
   return(
