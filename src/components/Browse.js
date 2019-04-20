@@ -13,14 +13,18 @@ class Browse extends React.Component {
 
     this.state = {
       homeType: 'All',
-      city: 'All',
+      state: 'All',
     };
 
-    this.changeHandler = this.changeHandler.bind(this)
+    this.changeHandler = this.changeHandler.bind(this);
   }
 
   changeHandler = (event) => {
-    this.setState({ homeType: event.target.value })
+    if (event.target.id === 'homeType') {
+      this.setState({ homeType: event.target.value })
+    } else if (event.target.id === 'state') {
+      this.setState({ state: event.target.value })
+    }
   }
   
   createListingView() {
@@ -60,13 +64,44 @@ class Browse extends React.Component {
     return listingView;
   }
 
+  listingView () {
+    var listings = [];
+    // find what need to be sorted by:
+    for (var i = 0; i < this.props.data.length; i++) {
+      if (this.props.data[i].homeType === this.state.homeType || this.state.homeType === 'All') {
+        if (this.props.data[i].state === this.state.state || this.state.state === 'All') {
+          listings.push(this.props.data[i]);
+        }
+      }
+    }
+
+    const view = (
+      <div className="container">
+        {listings.map(listing => (
+          <Link to={`/browse/${listing.id}`} key={listing.id}>
+            <div className="house-view">
+              <img src={listing.image} alt="house" />
+              <h3>{listing.homeType}</h3>
+              <p>{listing.address}, {listing.city}, {listing.state}</p>
+              <div className="extra-info">
+                Rooms: {listing.rooms}, {listing.floorSpace} Sq Ft
+              </div>
+              <div className="buy-button">Buy</div>
+            </div>
+          </Link>
+        ))}
+      </div>
+    );
+    return view; 
+  }
+
   render() {
     return(
       <div>
         <Header />
         <h1>Browse houses</h1>
           <HomeFilter changeHandler={this.changeHandler} />
-          {this.createListingView()}
+          {this.listingView()}
         <Footer />
       </div>
     );
