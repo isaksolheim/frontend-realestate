@@ -16,6 +16,9 @@ function HomeFilter(props) {
         <option>CA</option>
         <option>CHI</option>
       </select>
+      Elevator:<input type="checkbox" onChange={props.changeHandler} id="elevator" />
+      Gym:<input type="checkbox" onChange={props.changeHandler} id="gym" />
+      Pool:<input type="checkbox" onChange={props.changeHandler} id="pool" />
     </div>
   );
 }

@@ -14,16 +14,35 @@ class Browse extends React.Component {
     this.state = {
       homeType: 'All',
       state: 'All',
+      extras: [],
     };
 
     this.changeHandler = this.changeHandler.bind(this);
   }
 
   changeHandler = (event) => {
+    // handling for dropdown change
     if (event.target.id === 'homeType') {
       this.setState({ homeType: event.target.value })
     } else if (event.target.id === 'state') {
       this.setState({ state: event.target.value })
+    }
+
+
+    // handling for checkbox change
+    var extras = this.state.extras;
+
+    if (event.target.checked === true || event.target.checked === false) {
+      if (event.target.checked) {
+        extras.push(event.target.id);
+      } else {
+        for (var i = extras.length - 1; i >= 0; i--) {
+          if (extras[i] === event.target.id) {
+            extras.splice(i, 1);
+          }
+        }
+      }
+      this.setState({ extras: extras });
     }
   }
   
@@ -66,11 +85,19 @@ class Browse extends React.Component {
 
   listingView () {
     var listings = [];
+
     // find what need to be sorted by:
     for (var i = 0; i < this.props.data.length; i++) {
       if (this.props.data[i].homeType === this.state.homeType || this.state.homeType === 'All') {
         if (this.props.data[i].state === this.state.state || this.state.state === 'All') {
-          listings.push(this.props.data[i]);
+          if (this.state.extras.length !== 0) {
+            // checks if all extras in state is included in prop extras
+            if (this.state.extras.every(j => this.props.data[i].extras.includes(j))) {
+              listings.push(this.props.data[i]);
+            }
+          } else {
+            listings.push(this.props.data[i]); 
+          }
         }
       }
     }
