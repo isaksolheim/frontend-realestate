@@ -32,14 +32,22 @@
     background-color: color(color1);
     color: white;
     cursor: pointer;
+    transition: all 0.2s;
 
     #browse-button {
-      background-color: color(color2);
-      text-decoration: none;
-      color: white;
-      padding: 15px 32px;
       display: inline-block;
-      font-size: 18px;
+      bottom: 5px;
+      right: 5px;
+      padding: 0.35em 1.2em;
+      border: 0.1em solid #000000;
+      margin: 0 0.3em 0.3em 0;
+      border-radius: 0.12em;
+      box-sizing: border-box;
+      text-decoration: none;
+      font-weight: 300;
+      color: #000000;
+      text-align: center;
+      transition: all 0.2s;
     }
   }
 
@@ -49,12 +57,10 @@
     cursor: pointer;
 
     #browse-button {
-      background-color: color(color1);
-      text-decoration: none;
-      color: white;
       padding: 15px 32px;
-      display: inline-block;
       font-size: 18px;
+      color: #ffffff;
+      background-color: #000000;
     }
   }
 }

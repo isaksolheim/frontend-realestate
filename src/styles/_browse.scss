@@ -5,18 +5,29 @@ a {
   color: black;
 }
 .house-view {
+  margin: 5px;
   position: relative;
-  border: 2px solid black;
   border-radius: 5px;
   margin-top: 20px;
+  box-shadow: 0px 0px 10px grey;
 
   .home-type {
-    font-size: 20px;
+    margin-left: 5px;
+    font-size: 13px;
+    font-weight: lighter;
+    color: #444;
+    font-size: 0.9em;
   }
 
   img { 
-    width: 350px;
-    height: 200px;
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  .price {
+    margin-left: 5px;
+    font-size: 20px;
   }
 
   .buy-button {
@@ -36,22 +47,37 @@ a {
     text-align: center;
     text-transform: uppercase;
   }
+
+  .address {
+    font-size: 14px;
+    margin-left: 5px;
+  }
+
+  .extra-info {
+    padding-left: 5px;
+  }
 }
 
 .house-view:hover {
   .buy-button {
     display: inline-block;
     position: absolute;
-    text-align: center;
     bottom: 5px;
-    right: 20px;
-    background-color: color(color2);
-    border-radius: 5px;
-    width: 50px;
-    height: 30px;
+    right: 5px;
+    padding: 0.35em 1.2em;
+    border: 0.1em solid #000000;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-weight: 300;
+    color: #000000;
+    text-align: center;
+    transition: all 0.2s;
   }
 
   .buy-button:hover {
-    background-color: color(color1);
+    color: #ffffff;
+    background-color: #000000;
   }
 }

@@ -74,10 +74,11 @@ class Browse extends React.Component {
           <Link to={`/browse/${listing.id}`} key={listing.id}>
             <div className="house-view">
               <img src={listing.image} alt="house" />
-              <h3>{listing.homeType}</h3>
-              <p>{listing.address}, {listing.city}, {listing.state}</p>
+              <div className="price">${listing.price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}</div>
+              <div className="address">{listing.address}, {listing.city}, {listing.state}</div>
+              <div className="home-type">{listing.homeType}</div>
               <div className="extra-info">
-                Rooms: {listing.rooms}, {listing.floorSpace} Sq Ft
+                <i className="fas fa-bed"></i> {listing.rooms}, <i className="far fa-square"></i> {listing.floorSpace}ft<sup>2</sup> 
               </div>
               <div className="buy-button">Buy</div>
             </div>
@@ -92,7 +93,6 @@ class Browse extends React.Component {
     return(
       <div>
         <Header />
-        <h1>Browse houses</h1>
           <HomeFilter changeHandler={this.changeHandler} />
           {this.listingView()}
         <Footer />

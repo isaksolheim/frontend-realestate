@@ -4,11 +4,13 @@ body, html {
 
 body {
   font-family: 'Open Sans';
+  margin: 0;
 }
 
-@import 'extra';
-@import 'browse';
-@import 'footer';
-@import 'header';
+@import '../styles/extra';
+@import '../styles/browse';
+@import '../styles/footer';
+@import '../styles/header';
 @import 'landingpage';
-@import 'singleview';
+@import '../styles/homefilter';
+@import '../styles/singleview';
