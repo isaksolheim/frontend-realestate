@@ -24,13 +24,16 @@
   }
 
   #text {
-    background-color: color(color1);
-    color: white;
+    background-color: #f1f1f1;
+    color: black;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
   }
 
   #buy {
-    background-color: color(color1);
-    color: white;
+    background-color: #f1f1f1;
+    color: black;
     cursor: pointer;
     transition: all 0.2s;
 
@@ -52,9 +55,11 @@
   }
 
   #buy:hover {
+    /*
     background-color: color(color2);
     color: white;
     cursor: pointer;
+    */
 
     #browse-button {
       padding: 15px 32px;

@@ -12,27 +12,26 @@ function SingleView({ match }) {
       break;
     }
   }
-
   const view = (
-    <div className="singleview">
-      <img src={listing.image} alt="house" />
-      <div className="infobox">
-        <ul>
-          <li>Type: {listing.homeType}</li>
-          <li>Address: {listing.address}</li>
-          <li>City: {listing.city}</li>
-          <li>Rooms: {listing.rooms}</li>
-          <li>Floor Space: {listing.floorSpace}</li>
-          <li>Price: {listing.price}USD</li>
-          <li>
-            Extras: {listing.extras.map(extra => (
-              <div key={extra}>{extra}</div>
-            ))}
-          </li>
-        </ul>
+    <div className="container">
+      <div className="house-view">
+        <img src={listing.image} alt="house" />
+        <div className="price">${listing.price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}</div>
+        <div className="address">{listing.address}, {listing.city}, {listing.state}</div>
+        <div className="home-type">{listing.homeType}</div>
+        <div className="extra-info">
+          <i className="fas fa-bed"></i> {listing.rooms}, <i className="far fa-square"></i> {listing.floorSpace}ft<sup>2</sup> 
+        </div>
+        <div className="extras">Extras:
+          {listing.extras.map(extra => (
+              <div key={extra}>-{extra}</div>
+          ))}
+        </div>
+        <div className="buy-button">Buy</div>
       </div>
     </div>
   );
+
   return(
     <div>
       <Header />
