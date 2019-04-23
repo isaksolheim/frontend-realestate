@@ -13,7 +13,7 @@ function SingleView({ match }) {
     }
   }
   const view = (
-    <div className="container">
+    <div className="browse-container">
       <div className="house-view">
         <img src={listing.image} alt="house" />
         <div className="price">${listing.price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}</div>

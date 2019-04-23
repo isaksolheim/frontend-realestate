@@ -8,30 +8,27 @@ function LandingPage(props) {
   return(
     <div>
       <Header />
-      <br />
-      <div className="container">
-        <div id="slogan">
-          <h1>Find your new home</h1>
-          <h4>Search houses USA</h4>
-          <div id="searchbar">
-            <input type="text" />
-            <button>Go</button>
-          </div>
+      <div className="parallax">
+        Realty North
+        <div className="slogan">
+          bla bla bla bla
         </div>
-        
-        <FeaturedHomes data={props.data} />
+      </div>
 
-        <div className="card" id="text">
+      <div className="landingpage-container">
+        <div className="card">
           <p>
             We're reimagining how you buy, sell and rent.
             It's now easier to get into a place you love.
             So let's do this, together.
           </p>
         </div>
+
+        <FeaturedHomes data={props.data} />
         <hr />
         <Link to='/browse/'>
           <div className="card" id="buy">
-            <h1>Buy a home</h1>
+            <div className="buyahome">Buy a Home</div>
             <p>
               Find a place with an immersive photo experience
               and the most listings, including things you won't

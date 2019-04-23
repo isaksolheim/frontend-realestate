@@ -60,7 +60,7 @@ var listingsData = [
             'gym'
         ],
         homeType: 'Room',
-        image: 'https://thecollegeinvestor.com/wp-content/uploads/2012/04/Henrietta_Apartment_Building.jpg'
+        image: 'https://images.unsplash.com/photo-1510627489930-0c1b0bfb6785?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80',
     },
     {
         id: 6,
@@ -126,7 +126,7 @@ var listingsData = [
     },
     {
         id: 11,
-        featured: false,
+        featured: true,
         address: '16 second st',
         city: 'San Francisco',
         state: 'CA',
@@ -138,7 +138,7 @@ var listingsData = [
             'gym'
         ],
         homeType: 'Room',
-        image: 'https://thecollegeinvestor.com/wp-content/uploads/2012/04/Henrietta_Apartment_Building.jpg'
+        image: 'https://images.unsplash.com/photo-1510627489930-0c1b0bfb6785?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80',
     },
     {
         id: 12,

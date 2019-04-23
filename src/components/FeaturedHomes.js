@@ -11,7 +11,7 @@ function FeaturedHomes(props) {
     }
 
     const featuredView = (
-      <div>
+      <div className="browse-container">
         {featuredListings.map(listing => (
           <Link to={`/browse/${listing.id}`} key={listing.id}>
             <div className="house-view">

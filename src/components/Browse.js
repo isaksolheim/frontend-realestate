@@ -100,7 +100,7 @@ class Browse extends React.Component {
     }
 
     const view = (
-      <div className="container">
+      <div className="browse-container">
         {listings.map(listing => (
           <Link to={`/browse/${listing.id}`} key={listing.id}>
             <div className="house-view">
