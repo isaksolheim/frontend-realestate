@@ -13,6 +13,7 @@ class Browse extends React.Component {
       homeTypes: [],
       states: [],
       extras: [],
+      sortBy: 0,
     };
 
     this.changeHandler = this.changeHandler.bind(this);
@@ -20,7 +21,8 @@ class Browse extends React.Component {
   }
 
   sortHandler = (event) => {
-    console.log('test');
+    // value: 0: no sort, 1: low to high, 2: high to low,
+    this.setState({ sortBy: Number(event.target.value) });
   }
 
   changeHandler = (event) => {
@@ -74,6 +76,51 @@ class Browse extends React.Component {
   listingView () {
     var listings = [];
 
+    function bubbleSort(data, direction) {
+      /* 
+        uses a bubblesorting algorithm to sort
+        the data given based on price
+      */
+      while (true) {
+        var changes = 0;
+        var finished = false;
+        if (direction === 1) {
+          for (var i = 0; i < data.length - 1; i++) {
+            if (data[i].price > data[i+1].price) {
+              // swaps places
+              var tmp = data[i];
+              data[i] = data[i+1];
+              data[i+1] = tmp;
+              changes++;
+            }
+            if (i === data.length - 2 && changes === 0) {
+              finished = true;
+            }
+          }
+          if (finished) {
+            break;
+          }
+        } else {
+          for (i = data.length - 1; i >= 1; i--) {
+            if (data[i].price > data[i-1].price) {
+              // swaps places
+              tmp = data[i];
+              data[i] = data[i-1];
+              data[i-1] = tmp;
+              changes++;
+            }
+            if (i === 1 && changes === 0) {
+              finished = true;
+            }
+          }
+          if (finished) {
+            break;
+          }
+        }
+      }
+      return data;
+    }
+
     function includesExtras(stateExtras, extras) {
       // returns true if extras include all extras in stateExtras
       return (stateExtras.every(i => extras.includes(i)));
@@ -103,6 +150,11 @@ class Browse extends React.Component {
         }
       }
     }
+
+    if (this.state.sortBy !== 0) {
+      listings = bubbleSort(listings, this.state.sortBy);
+    }
+
 
     const view = (
       <div className="browse-container">

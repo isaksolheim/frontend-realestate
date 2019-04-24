@@ -12,6 +12,7 @@ a {
   @include desktop {
     display: grid;
     grid-template-columns: auto auto auto;
+    grid-gap: 10px;
     grid-auto-rows: 1fr;
   }
   .house-view {

@@ -1,6 +1,11 @@
+.filter-tools {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+
 .filter-button {
-  margin: 0 auto;
-  margin-top: 10px;
   width: 170px;
   bottom: 5px;
   right: 5px;

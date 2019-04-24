@@ -90,15 +90,15 @@ class HomeFilter extends Component {
       );
     } else {
       return(
-        <div>
+        <div className="filter-tools">
           <div className="filter-button" onClick={this.toggleHandler}>
             Show Filters <i className="fas fa-bars"></i>
           </div>
           <div className="sort-select">
             <select onChange={this.props.sortHandler}>
-              <option selected disabled>Sort By</option>
-              <option>Price High to Low</option>
-              <option>Price Low to High</option>
+              <option value="0">Relevancy</option>
+              <option value="1">Price Low to High</option>
+              <option value="2">Price High to Low</option>
             </select>
           </div>
         </div>
