@@ -1,11 +1,11 @@
 .filter-button {
+  margin: 0 auto;
+  margin-top: 10px;
   width: 170px;
-  display: inline-block;
   bottom: 5px;
   right: 5px;
   padding: 0.35em 1.2em;
   border: 0.1em solid #000000;
-  margin: 0 0.3em 0.3em 5px;
   border-radius: 0.12em;
   box-sizing: border-box;
   text-decoration: none;
@@ -22,6 +22,16 @@
 }
 
 .filter-menu {
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+    .filter-box {
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+  }
   background-color: #f1f1f1;
   margin-top: 10px;
 
@@ -59,6 +69,7 @@
   }
 
   .filter-category {
+    font-size: 20px;
     padding-left: 5px;
     padding-bottom: 5px;
   }

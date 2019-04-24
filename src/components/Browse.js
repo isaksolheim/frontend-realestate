@@ -16,6 +16,11 @@ class Browse extends React.Component {
     };
 
     this.changeHandler = this.changeHandler.bind(this);
+    this.sortHandler = this.sortHandler.bind(this);
+  }
+
+  sortHandler = (event) => {
+    console.log('test');
   }
 
   changeHandler = (event) => {
@@ -125,7 +130,7 @@ class Browse extends React.Component {
     return(
       <div>
         <Header />
-          <HomeFilter changeHandler={this.changeHandler} />
+          <HomeFilter changeHandler={this.changeHandler} sortHandler={this.sortHandler} />
           {this.listingView()}
         <Footer />
       </div>

@@ -8,10 +8,13 @@ function LandingPage(props) {
   return(
     <div>
       <Header />
+      
       <div className="parallax">
-        Realty North
-        <div className="slogan">
-          bla bla bla bla
+        <div className="title">
+          Realty North
+          <div className="slogan">
+            Buy Apartments, Lofts, Condos and Rooms
+          </div>
         </div>
       </div>
 
@@ -23,9 +26,7 @@ function LandingPage(props) {
             So let's do this, together.
           </p>
         </div>
-
         <FeaturedHomes data={props.data} />
-        <hr />
         <Link to='/browse/'>
           <div className="card" id="buy">
             <div className="buyahome">Buy a Home</div>
