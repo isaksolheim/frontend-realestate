@@ -5,7 +5,7 @@ function Header() {
   return(
     <div className="header">
       <Link to='/' className="logo">Realty North</Link>
-      <Link to='/browse/'>Browse</Link>
+      <Link to='/browse/' className="nav-item">Browse</Link>
     </div>
   );
 }
