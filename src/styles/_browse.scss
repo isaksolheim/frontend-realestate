@@ -14,6 +14,7 @@ a {
     grid-template-columns: auto auto auto;
     grid-gap: 10px;
     grid-auto-rows: 1fr;
+    margin-bottom: 20px;
   }
   .house-view {
     margin: 5px auto;
@@ -37,6 +38,7 @@ a {
       width: 100%;
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
+      max-height: 210px;
     }
 
     .price {

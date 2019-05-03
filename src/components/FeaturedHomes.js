@@ -16,6 +16,7 @@ function FeaturedHomes(props) {
           <Link to={`/browse/${listing.id}`} key={listing.id}>
             <div className="house-view">
               <img src={listing.image} alt="house" />
+              <div className="featured-label">FEATURED</div>
               <div className="price">${listing.price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}</div>
               <div className="address">{listing.address}, {listing.city}, {listing.state}</div>
               <div className="home-type">{listing.homeType}</div>
